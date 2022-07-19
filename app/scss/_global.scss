@@ -1,0 +1,99 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-size: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    min-width: 320px;
+    overflow-x: hidden;
+    position: relative;
+    background-color: $white;
+    color: $primary-color;
+    margin: 0;
+    padding: 0;
+    @extend %mulish-medium;
+    font-size: 18px;
+    line-height: 21.6px;
+}
+
+.container {
+    max-width: 1823px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.btn {
+    @extend %mulish-extrabold;
+    font-size: 18px;
+    line-height: 21.6px;
+    background: $secondary-color;
+    color: $white;
+    box-shadow: 13px 4px 30px rgba(203, 173, 149, 0.45);
+    border-radius: 6px;
+    padding: 16px 26px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: $secondary-color;
+    color: $white;
+    box-shadow: 3px 4px 30px rgba(203, 173, 149, 0.8), 13px 4px 30px rgba(203, 173, 149, 0.45);
+    border-radius: 6px;
+    padding: 16px 26px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:disabled {
+    background: $secondary-color;
+    color: $white;
+    opacity: 0.4;
+    box-shadow: 13px 4px 30px rgba(203, 173, 149, 0.45);
+    border-radius: 6px;
+    padding: 16px 26px;
+    border: none;
+    cursor: pointer;
+}
+
+@keyframes in-out {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
