@@ -48,6 +48,11 @@ body {
     line-height: 21.6px;
 }
 
+main {
+    background-image: url('../images/about.png');
+    background-repeat-y: no-repeat;
+}
+
 .container {
     max-width: 1823px;
     padding: 0 15px;
