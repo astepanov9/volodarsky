@@ -64,7 +64,11 @@
         position: relative;
 
         &::before {
-            content: "";
+            content: "0";
+            @extend %mulish-bold;
+            text-align: center;
+            font-size: 14px;
+            line-height: 18.2px;
             position: absolute;
             width: 20px;
             height: 20px;
@@ -73,6 +77,7 @@
             left: 12px;
             top: 9px;
             background-image: url('../images/cart-num.svg');
+            padding: 0.6px;
         }
     }
 
@@ -638,7 +643,7 @@
         display: flex;
         justify-content: center;
         background-image: url('../images/production-bg.png');
-        background-repeat-y: no-repeat;
+        background-repeat: repeat-x;
     }
 
     &__two-right {
@@ -790,7 +795,7 @@
         display: flex;
         justify-content: center;
         background-image: url('../images/production-bg-02.png');
-        background-repeat-y: no-repeat;
+        background-repeat: repeat-x;
     }
 
     &__four-right {
@@ -1034,12 +1039,17 @@
     }
 }
 
-.contacts {
+.wrapper-bottom {
+    position: relative;
     background-color: $primary-color;
     background-image: url('../images/contacts-bg-01.png'), url('../images/contacts-bg-02.png');
     background-repeat: no-repeat;
-    background-position: 0% 100%, 100% 100%;
+    background-position: 0% 36%, 100% 36%;
+}
+
+.contacts {
     padding: 81px 213px 79px 374px;
+
 
     &__inner {
         display: flex;
@@ -1048,6 +1058,7 @@
     &__info {
         display: flex;
         flex-direction: column;
+        margin-right: 149px;
     }
 
     &__title {
@@ -1078,6 +1089,353 @@
 
         &:hover {
             color: $contacts-color;
+        }
+    }
+
+    &__form-top {
+        display: flex;
+        margin-bottom: 32px;
+    }
+
+    &__form-inputs {
+        display: flex;
+        flex-direction: column;
+        margin-right: 45px;
+    }
+
+    &__form-input {
+        @extend %mulish-semibold;
+        font-size: 22px;
+        line-height: 26.4px;
+        background-color: $contacts-color;
+        border: none;
+        border-radius: 4px;
+        width: 392px;
+        height: 58px;
+        padding: 16px 40px 16px 40px;
+
+        &::placeholder {
+            color: $primary-color;
+            opacity: .5;
+            @extend %mulish-semibold;
+            font-size: 22px;
+            line-height: 26.4px;
+        }
+
+        &:active,
+        &:focus {
+            border: none;
+            outline: none;
+        }
+    }
+
+    &__form-input:not(:last-child) {
+        margin-bottom: 32px;
+    }
+
+    &__form-textarea {
+        @extend %mulish-semibold;
+        font-size: 22px;
+        line-height: 26.4px;
+        background-color: $contacts-color;
+        border: none;
+        border-radius: 4px;
+        width: 430px;
+        height: 238px;
+        padding: 16px 40px 0 40px;
+
+        &::placeholder {
+            color: $primary-color;
+            opacity: .5;
+            @extend %mulish-semibold;
+            font-size: 22px;
+            line-height: 26.4px;
+        }
+
+        &:active,
+        &:focus {
+            border: none;
+            outline: none;
+        }
+    }
+
+    &__form-bottom {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__form-label {
+        @extend %mulish-semibold;
+        font-size: 22px;
+        line-height: 26.4px;
+        color: $white;
+        margin-bottom: 50px;
+        margin-left: 37px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__form-check {
+        position: relative;
+
+        &:before {
+            content: "";
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            left: -37px;
+            bottom: -10px;
+            background-color: $secondary-color;
+            border: 2px solid $white;
+            border-radius: 4px;
+            cursor: pointer;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+
+    &__form-checkbox {
+        display: none;
+
+        &:checked+.contacts__form-check:before {
+            background-image: url('../images/ok.svg');
+        }
+    }
+
+    &__form-link {
+        text-decoration: underline;
+        transition: all .3s;
+
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+
+    &__form-btn {
+        max-width: 200px;
+    }
+}
+
+.footer {
+    background-image: url('../images/footer-bg.png');
+    background-repeat: repeat-x;
+    display: flex;
+    flex-direction: column;
+    padding: 54px 85px 0 85px;
+
+    &__top {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-height: 310px;
+    }
+
+    &__logo {
+        order: 0;
+        width: 20%;
+        margin-bottom: 57px;
+    }
+
+    &__adress {
+        order: 1;
+        width: 20%;
+    }
+
+    &__adress-text {
+        @extend %mulish-semibold;
+        font-size: 22px;
+        line-height: 26.4px;
+        max-width: 295px;
+        display: block;
+        position: relative;
+        color: #50220F;
+        margin-left: 23px;
+        transition: all .3s;
+
+        &:hover {
+            color: $secondary-color;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 30px;
+            left: -27px;
+            top: -10px;
+            background-image: url('../images/location.svg');
+        }
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 44px;
+        order: 1;
+        width: 60%;
+    }
+
+    &__nav-production {
+        margin-right: 100px;
+    }
+
+    &__nav-title {
+        @extend %mulish-bold;
+        font-size: 26px;
+        line-height: 28.6px;
+        margin-bottom: 24px;
+    }
+
+    &__nav-item:not(:last-child) {
+        margin-bottom: 16px;
+    }
+
+    &__nav-list {
+        position: relative;
+    }
+
+    &__nav-link {
+        font-size: 16px;
+        line-height: 20.8px;
+        text-decoration: underline;
+        transition: all .3s;
+
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+
+    &__nav-about {
+        margin-right: 100px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        order: 2;
+        width: 20%;
+        margin-bottom: 16px;
+    }
+
+    &__tel {
+        @extend %mulish-bold;
+        font-size: 26px;
+        line-height: 28.6px;
+        margin-bottom: 8px;
+        transition: all .3s;
+
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+
+    &__mail {
+        @extend %mulish-semibold;
+        font-size: 22px;
+        line-height: 26.4px;
+        transition: all .3s;
+
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+
+    &__social {
+        display: flex;
+        flex-direction: column;
+        order: 4;
+        width: 20%;
+    }
+
+    &__social-items {
+        margin-bottom: 24px;
+    }
+
+    &__social-item {
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+
+    &__social-link {
+        display: block;
+        width: 32px;
+        height: 32px;
+        background-image: url('../images/social-sprite-02.png');
+        transition: all .3s;
+
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+
+        &:hover {
+            opacity: .8;
+        }
+
+        &.vk {
+            background-position: -52px 0;
+        }
+
+        &.instagram {
+            background-position: -104px 0;
+        }
+
+        &.message {
+            background-position: -156px 0;
+        }
+
+        &.youtube {
+            background-position: -208px 0;
+        }
+    }
+
+    &__social-sale {
+        padding-left: 35px;
+        transition: all .3s;
+
+        svg {
+            transition: all .3s;
+            fill: $primary-color;
+        }
+
+        &:hover {
+            color: $secondary-color;
+        }
+
+        &:hover.footer__social-sale svg {
+            fill: $secondary-color;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        padding: 54px 0;
+    }
+
+    &__bottom-text {
+        margin: 0;
+    }
+
+    &__bottom-link {
+        transition: all .3s;
+        color: $secondary-color;
+
+        svg {
+            transition: all .3s;
+            fill: $secondary-color;
+        }
+
+        &:hover {
+            color: $primary-color;
+        }
+
+        &:hover.footer__bottom-link svg {
+            fill: $primary-color;
         }
     }
 }

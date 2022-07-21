@@ -50,7 +50,7 @@ body {
 
 main {
     background-image: url('../images/about.png');
-    background-repeat-y: no-repeat;
+    background-repeat: repeat-x;
 }
 
 .container {
@@ -70,6 +70,7 @@ main {
     padding: 16px 26px;
     border: none;
     cursor: pointer;
+    transition: all .3s;
 }
 
 .btn:hover {
