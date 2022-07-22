@@ -144,7 +144,19 @@
                             </div>
                         </div>
                         <div class="about__info">
-                            <img class="about__video" src="images/video.jpg" alt="video">
+                            <div class="about__video" style="position: relative;">
+                                <video id="video" class="about__video-player" controls="" preload="none"
+                                    poster="images/video.jpg">
+                                    <source id="mp4" src="http://media.w3.org/2010/05/sintel/trailer.mp4"
+                                        type="video/mp4">
+                                </video>
+                                <div class="about__play" onclick="document._video.play()"><svg width="70" height="70"
+                                        viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="35" cy="35" r="35" />
+                                        <path d="M47 35L29 45.3923L29 24.6077L47 35Z" fill="white" />
+                                    </svg>
+                                </div>
+                            </div>
                             <div class="about__info-box">
                                 <h4 class="about__info-title">
                                     Крупнейший поставщик муки в Нижегородской области

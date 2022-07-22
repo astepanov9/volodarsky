@@ -94,6 +94,10 @@ main {
     cursor: pointer;
 }
 
+video::-webkit-media-controls {
+    display: none !important;
+}
+
 @keyframes in-out {
     0% {
         width: 0;
